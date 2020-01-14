@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+@import '../../styles/share.scss';
+
+.user-info{
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  font-size: 14px;
+
+  .user-details {
+    position: absolute;
+    height: auto;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    left: 0;
+    right: 0;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.15), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    border-radius: 1px;
+    padding: 10px 0px;
+    transition: all .2s linear;
+
+    &:hover {
+      box-shadow: 4px 4px 6px 4px rgba(60, 64, 67, 0.15), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    }
+
+    @media (min-width: $min-mobile-size) and (max-width: $min-tablet-size) {
+      width: 100%;
+      margin-top: auto;
+      margin-bottom: auto;
+      top: 0;
+      bottom: 0;
+      box-shadow: none;
+    }
+
+    .user-detail {
+      display: flex;
+      padding: 25px 15px;
+      width: 100%;
+
+      .user-label {
+        flex: 1;
+
+        @media (min-width: $min-mobile-size) and (max-width: $min-tablet-size) {
+          flex: 2;
+        }
+      }
+
+      .user-data {
+        flex: 2;
+
+        @media (min-width: $min-mobile-size) and (max-width: $min-tablet-size) {
+          flex: 3;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<main class="row">
+  <div class="content1">
+    <div class="logo-container">
+      <div class="logo-title">YES DOC</div>
+    </div>
+    <footer class="signin-footer">©YesDoc {{year}}</footer>
+  </div>
+
+  <div class="content2">
+    <div class="content2-container">
+      <h2 class="signin-title">WELCOME</h2>
+      <h3 class="signin-message">Signin to your Yes Doc account!</h3>
+      <div class="form-container">
+        <form class="form" [formGroup]="userForm" (ngSubmit)="onSubmit($event)">
+          <!-- Email -->
+          <div class="input-box">
+            <i class="icon icon-user-black"></i>
+            <input (keyup)="onKeyup('email')" formControlName="email" placeholder="Email" type="text" id="user-name">
+            <small *ngIf="error.email" class="error-message">{{error.email}}</small>
+          </div>
+          <!-- Password -->
+          <div class="input-box">
+            <i class="icon icon-lock"></i>
+            <input (keyup)="onKeyup('password')" formControlName="password" [type]="passwordType"
+              placeholder="Password" id="password"
+            >
+            <!-- For show -->
+            <div class="password" *ngIf="passwordType === 'password'" (click)="passwordToggle('text')">
+              <i class="icon icon-hide-password"></i>
+            </div>
+            <!-- For hide -->
+            <div class="password" *ngIf="passwordType === 'text'" (click)="passwordToggle('password')">
+              <i class="icon icon-show-password"></i>
+            </div>
+            <small *ngIf="error.password" class="error-message">{{error.password}}</small>
+          </div>
+          <!-- Button -->
+          <div>
+            <input type="submit" class="btn-signin" value="Sign in">
+          </div>
+        </form>
+      </div>
+      <footer class="mobile-view-signin-footer">©YesDoc {{year}}</footer>
+    </div>
+  </div>
+</main>

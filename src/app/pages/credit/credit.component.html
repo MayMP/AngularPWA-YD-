@@ -1,0 +1,30 @@
+<header mode="credit"></header>
+
+<div class="credit-container">
+  <div class="credit-details">
+
+    <div class="credit-detail">
+      <label for="credit_score" class="credit-label"> Credit Score </label>
+      <div class="credit-box">
+        <input type="text" [formControl]="credit_score" (keyup)="checkCredit()">
+      </div>
+      <small *ngIf="error.credit_score" class="error-message"> {{error.credit_score}} </small>
+    </div>
+
+    <div class="credit-detail">
+      <label for="credit_date" class="credit-label"> Date </label>
+      <div class="credit-box">
+        <input id="input-date" matInput autocomplete="off" [matDatepicker]="date_picker" 
+          [formControl]="credit_date" placeholder="Date"
+        >
+        <mat-datepicker-toggle matSuffix [for]="date_picker" class="button"></mat-datepicker-toggle>
+        <mat-datepicker touchUi="false" #date_picker></mat-datepicker>
+      </div>
+      <small *ngIf="error.credit_date" class="error-message"> {{error.credit_date}} </small>
+    </div>
+    <div class="credit-button">
+      <button class="credit-cancel" (click)="cancelCredit()"> Cancel </button>
+      <button class="credit-update" (click)="updateCredit()"> Submit </button>
+    </div>
+  </div>
+</div>

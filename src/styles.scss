@@ -1,1 +1,130 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Main CSS
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import '~@angular/material/theming';
+$custom-typography: mat-typography-config($font-family: 'Open Sans');
+@include mat-core($custom-typography);
+
+@import './app/styles/variables.scss';
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  color: #1d2129;
+  font-family: 'Open Sans';
+}
+
+* {
+  font-family: 'Open Sans';
+  box-sizing: border-box
+}
+
+.loader {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+
+  .message {
+    top: 140px;
+    width: max-content;
+    height: 40px;
+    position: relative;
+    margin: 100px auto;
+    color: $primary-color;
+    font-size: 16px;
+    font-weight: bolder
+  }
+
+  .spinner {
+    top: 30%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 100px auto
+  }
+
+  .double-bounce1,
+  .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: $primary-color;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out
+  }
+
+  .double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s
+  }
+
+  @-webkit-keyframes sk-bounce {
+    0%,
+    100% {
+      -webkit-transform: scale(0.0)
+    }
+
+    50% {
+      -webkit-transform: scale(1.0)
+    }
+  }
+
+  @keyframes sk-bounce {
+    0%,
+    100% {
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0)
+    }
+
+    50% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0)
+    }
+  }
+}
+
+.loaded {
+  .loader {
+    display: none
+  }
+}
+
+// material-design
+.success-snackbar {
+  background-color: $success-snackbar;
+  color: #ffffff;
+
+  .mat-simple-snackbar-action {
+    color: #ffffff !important
+  }
+}
+
+.error-snackbar {
+  background-color: $error-snackbar;
+  color: #ffffff;
+
+  .mat-simple-snackbar-action {
+    color: #ffffff !important
+  }
+}
+
+.message-snackbar {
+  background-color: $message-snackbar;
+  color: #ffffff;
+
+  .mat-simple-snackbar-action {
+    color: #ffffff !important
+  }
+}

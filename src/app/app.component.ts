@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'AngularPWA';
+  constructor(){}
+
+  addLoaded(){
+    var class_name = document.getElementById('root').className;
+    var loaded     = class_name.includes('loaded');
+    if( !loaded )
+      document.getElementById('root').classList.add('loaded');
+  }
 }

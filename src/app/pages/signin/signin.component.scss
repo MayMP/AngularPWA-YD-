@@ -1,0 +1,160 @@
+
+@import '../../styles/variables.scss';
+@import '../../styles/icons.scss';
+@import '../../styles/share.scss';
+
+.row {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  .content1 {
+    width: 50%;
+    background-color: $primary-color;
+    position: relative;
+
+    @media (min-width: $min-mobile-size) and (max-width: $min-tablet-size){
+      display: none
+    }
+
+    .logo-container {
+      position: absolute;
+      right: 50px;
+      height: 200px;
+      top: 165px
+    }
+
+    .logo-title {
+      font-size: 45px;
+      font-weight: bolder;
+      color: #fff
+    }
+  } 
+
+  .content2 {
+    width: 50%;
+    position: relative;
+    text-align: center;
+
+    @media (min-width: $min-mobile-size) and (max-width: $min-tablet-size) {
+      width: 100%
+    }
+
+    .content2-container {
+      width: 100%;
+      padding-bottom: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      top: 150px;
+
+      .signin_title {
+        font-weight: 200;
+        color: $primary-color;
+        font-size: 40px;
+        font-weight: bolder;
+
+        @media (min-width: $min-mobile-size) and (max-width: $min-tablet-size) {
+          display: none
+        }
+      }
+
+      .form-container {
+        display: block;
+        text-align: center;
+
+        .form {
+          width: 100%;
+          max-width: 400px;
+          padding: 0 20px;
+          display: inline-block;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+
+          .input-box {
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 42px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+
+            input {
+              flex: 1;
+              border:  none;
+              outline: none;
+              background-color: transparent;
+              padding: 0 20px;
+              align-self: stretch;
+              font-size: 14px
+            }
+
+            .error-message {
+              position: absolute;
+              left: 54px;
+              bottom: 0
+            }
+          }
+
+          .btn-signin {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 16px;
+            border-radius: 42px;
+            background-color: $primary-color;
+            color: #fff;
+            font-size: 1.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            border: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.signin-footer {
+  position: fixed;
+  width: 50%;
+  padding: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-view-signin-footer {
+  display: none;
+
+  @media (min-width: $min-mobile-size) and (max-width: $min-tablet-size) {
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    padding: 0;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    background-color: $primary-color;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+}
+
+.password {
+  cursor: pointer;
+  opacity: 0.6
+}

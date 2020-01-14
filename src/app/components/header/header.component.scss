@@ -1,0 +1,56 @@
+@import '../../styles/variables.scss';
+
+.header {
+    background-color: $primary-color;
+    padding: 20px 10px;
+    overflow: hidden;
+
+    .logo {
+        color: #f1f1f1;
+        font-size: 25px;
+        font-weight: bold;
+        float: left;
+        line-height: 2;
+
+        @media (min-width: $min-mobile-size) and (max-width: $min-tablet-size) {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+    }
+
+    .header-right {
+        float: right;
+        line-height: 3;
+        font-weight: bolder;
+
+        @media (min-width: $min-mobile-size) and (max-width: $min-tablet-size) {
+            float: none
+        }
+   
+        .credit {
+            font-size: 14px;
+            color: #f1f1f1;
+            
+            label {
+                padding-right: 5px;
+            }
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            color: #f1f1f1;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 10px;
+            font-weight: bolder;
+            text-decoration: underline;
+
+            &:hover {
+                background-color:#194c63;
+                text-decoration: none;
+            }
+        }
+    }
+}

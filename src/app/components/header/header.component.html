@@ -1,0 +1,11 @@
+<div class="header">
+  <div class="logo">YES DOC</div>
+  <div class="header-right">
+    <span class="credit">
+      <label>Available Credit : {{available_credit}}</label>
+      <button *ngIf="mode == 'dashboard'" (click)="useCredit()">Use Credit</button>
+    </span>
+    <button (click)="logout()">Logout</button>
+  </div>
+</div>
+  

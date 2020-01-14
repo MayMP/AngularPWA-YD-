@@ -1,0 +1,102 @@
+@import '../../styles/variables.scss';
+@import '../../styles/share.scss';
+
+.credit-container {
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  font-size: 14px;
+
+  .credit-details {
+    position: absolute;
+    height: auto;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    left: 0;
+    right: 0;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.15), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    border-radius: 1px;
+    padding: 10px 0px;
+    transition: all .2s linear;
+
+    &:hover {
+      box-shadow: 4px 4px 6px 4px rgba(60, 64, 67, 0.15), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    }
+
+    @media (min-width: $min-mobile-size) and (max-width: $min-tablet-size) {
+      width: 100%;
+      margin-top: auto;
+      margin-bottom: auto;
+      top: 0;
+      bottom: 0;
+      box-shadow: none;
+    }
+
+    .credit-detail {
+      padding: 25px 15px;
+      width: 100%;
+
+      .credit-label {
+        font-size: 14px;
+      }
+
+      .credit-box {
+        margin-bottom: 16px;
+        border: 1px solid #ddd;
+        border-radius: 42px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        position: relative;
+
+        input {
+          flex: 1;
+          border:  none;
+          outline: none;
+          background-color: transparent;
+          padding: 0 20px;
+          align-self: stretch;
+          font-size: 14px
+        }
+
+        .error-message {
+          position: absolute;
+          left: 54px;
+          bottom: 0
+        }
+      }
+    }
+    .credit-button {
+      width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 25px;
+
+      .credit-cancel {
+        background-color: #eee;
+        padding: 10px 35px;
+        color: #777;
+        font-size: 1em;
+        border-radius: 5px;
+        font-weight: bolder;
+        margin-right: 5px;
+      }
+
+      .credit-update {
+        background-color: $primary-color;
+        padding: 10px 35px;
+        color: #fff;
+        font-size: 1em;
+        border-radius: 5px;
+        font-weight: bolder;
+      }
+    }
+  }
+}
+
+#input-date {
+  pointer-events: none
+}
